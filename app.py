@@ -12,6 +12,7 @@ db=  SQLAlchemy(app)
 
 class Todo(db.Model) :
     __abstract__ = True
+    db.create_all()
     id = db.Column(db.Integer, primary_key = True)
     content = db.Column(db.String(200), nullable= False)
     completed =  db.Column(db.Integer, default =0)
@@ -34,8 +35,8 @@ def index():
             return "There was an issue adding your task"
 
     else:
-       # task = Todo.query.order_by(Todo.date_created).all()
-        return render_template('index.html')
+        tasks = Todo.query.order_by(Todo.date_created).all()
+        return render_template('index.html', tasks=tasks)
     #return "Hellow world"
 if __name__ ==  "__main__":
     app.run(debug=True)
