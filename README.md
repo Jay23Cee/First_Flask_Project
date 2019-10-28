@@ -1,5 +1,3 @@
-LEFT OFF AT 25:00
+LEFT OFF AT 29:00
 
-For some reason the CSS is not activated.
-and it seems he extends base.html in /index.html
-is not working. will continue to work on it. 
+having an error with app.py line 27 : Task query not found. could be because of SQLAlchemy model?
