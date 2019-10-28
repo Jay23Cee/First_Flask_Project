@@ -1,9 +1,10 @@
-     
-{ % extends  "base.html"  %}      
+{% extends 'base.html' %} 
+
+
 
 {% block head %}
 <title> TASK MASTER</title>
-{%endblock head %}
+{% endblock head %}
 
 {%  block body %}
     <div class="content">
@@ -30,10 +31,10 @@
         </table>
 
 
-        <form action ="/" method = "POST">
+        <form action ="/" method ="POST">
             <input type="text" name="content" id="content">
-            <input type="submit" value="Add Task"
+            <input type="submit" value="Add Task">
         </form>
     </div>
-{%  endblock body%}
+{%  endblock body  %}
 

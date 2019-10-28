@@ -1,16 +1,17 @@
-from flask import Flask , render_template, url_for
+from flask import Flask , render_template, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__, )
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.static_folder= 'static'
+#app.static_folder= 'static'
 
 db=  SQLAlchemy(app)
 
 
 class Todo(db.Model) :
+    __abstract__ = True
     id = db.Column(db.Integer, primary_key = True)
     content = db.Column(db.String(200), nullable= False)
     completed =  db.Column(db.Integer, default =0)
@@ -21,7 +22,10 @@ class Todo(db.Model) :
 
 @app.route('/' , methods = ['POST', 'GET'])
 def index():
-   return render_template('index.html')
+    if request.method =='POST':
+        return "hello"
+    else:
+         return render_template('index.html')
     #return "Hellow world"
 if __name__ ==  "__main__":
     app.run(debug=True)

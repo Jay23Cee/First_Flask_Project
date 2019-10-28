@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Python\\Python37-32\\python.exe",
+    "python.pythonPath": "venv\\Scripts\\python.exe",
 
     "files.associations": {"*.html": "html"},
 

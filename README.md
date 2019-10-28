@@ -1,3 +1,5 @@
-CSS not working yet.
-Needs to have post and Get to populate the  table.
-link the buttons to their corresponding location.
+LEFT OFF AT 25:00
+
+For some reason the CSS is not activated.
+and it seems he extends base.html in /index.html
+is not working. will continue to work on it. 
